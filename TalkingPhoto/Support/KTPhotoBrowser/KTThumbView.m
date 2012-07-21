@@ -10,6 +10,7 @@
 #import "KTThumbsViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
+#define VOICE_BUTTON_TAG      1111
 
 @implementation KTThumbView
 
@@ -20,24 +21,24 @@
    [super dealloc];
 }
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame 
 {
    if (self = [super initWithFrame:frame]) {
-
       [self addTarget:self
                action:@selector(didTouch:)
      forControlEvents:UIControlEventTouchUpInside];
       
       [self setClipsToBounds:YES];
-     
      ////
      // added by tanyu for: 添加录音按扭。 2012.05.11
      UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self addSubview:btn];
+     [self addSubview:btn];
      [btn setBackgroundImage:[UIImage imageNamed:@"voice_tag.png"] forState:UIControlStateNormal];
      btn.frame = CGRectMake(0, 0, 10, 10);
-     [btn addTarget:self action:@selector(record:) forControlEvents:UIControlEventTouchUpInside];
+     btn.tag = VOICE_BUTTON_TAG;
      
+//     [btn addTarget:self action:@selector(record:) forControlEvents:UIControlEventTouchUpInside];
+
 //     UIButton *playBtn = [[UIButton alloc] initWithFrame:CGRectMake(80, 80, 20, 20)];
 //     [self addSubview:playBtn];
 //     playBtn.backgroundColor = [UIColor redColor];
@@ -92,4 +93,10 @@
   NSLog(@"Play %p", self.controller);
 }
 
+#pragma mark - overwrite
+- (void)setTag:(NSInteger)tag
+{
+  [super setTag:tag];
+  [self viewWithTag:VOICE_BUTTON_TAG].hidden = ![self.controller hasRecordFile:tag];
+}
 @end

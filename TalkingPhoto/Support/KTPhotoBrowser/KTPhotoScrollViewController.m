@@ -146,7 +146,11 @@ const CGFloat ktkDefaultToolbarHeight = 44;
                                     ktkDefaultToolbarHeight);
    toolbar_ = [[UIToolbar alloc] initWithFrame:toolbarFrame];
    [toolbar_ setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin];
-   [toolbar_ setBarStyle:UIBarStyleBlackTranslucent];
+  // modified by tanyu.As the method is deprecated
+//   [toolbar_ setBarStyle:UIBarStyleBlackTranslucent];
+  [toolbar_ setBarStyle:UIBarStyleBlack];
+  [toolbar_ setTranslucent:YES];
+  /// end
    [toolbar_ setItems:toolbarItems];
    [[self view] addSubview:toolbar_];
    

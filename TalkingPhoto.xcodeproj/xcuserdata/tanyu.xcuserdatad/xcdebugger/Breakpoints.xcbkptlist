@@ -33,19 +33,6 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "TalkingPhoto/Support/KTPhotoBrowser/KTThumbsViewController.m"
-         timestampString = "364141519.771028"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "153"
-         endingLineNumber = "153"
-         landmarkName = "-play4ThumbAtIndex:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/AVCamCaptureManager.m"
          timestampString = "364316736.279809"
          startingColumnNumber = "9223372036854775807"

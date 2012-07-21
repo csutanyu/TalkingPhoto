@@ -173,6 +173,29 @@
   [self.speakController play];
 }
 
+- (BOOL)hasRecordFile:(NSInteger)index
+{
+  NSManagedObjectContext *context = [(AppDelegate *)[UIApplication sharedApplication].delegate managedObjectContext];
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+  NSEntityDescription *descript = [NSEntityDescription entityForName:@"Photo2AudioFileEntity" inManagedObjectContext:context];
+  [fetchRequest setEntity:descript];
+  [fetchRequest setResultType:NSManagedObjectResultType];
+  NSURL * assetURL = [self.dataSource urlOfImageAtIndex:index];
+  NSLog(@"Play: %@", assetURL);
+  NSPredicate *pred = [NSPredicate predicateWithFormat:@"%K like %@", @"photo_file_name", [assetURL absoluteString]];
+  [fetchRequest setPredicate:pred];
+  NSError *error = nil;
+  NSArray *resultArr = [context executeFetchRequest:fetchRequest error:&error];
+  if (error != nil) {
+    NSLog(@"executeFetchRequest failed with error: %@", error);
+    return NO;
+  }
+  if ([resultArr count] == 0) {
+    return NO;
+  } else {
+    return YES;
+  }
+}
 
 #pragma mark -
 #pragma mark KTThumbsViewDataSource

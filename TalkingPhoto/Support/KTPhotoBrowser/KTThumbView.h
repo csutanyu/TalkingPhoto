@@ -21,6 +21,5 @@
 - (id)initWithFrame:(CGRect)frame;
 - (void)setThumbImage:(UIImage *)newImage;
 - (void)setHasBorder:(BOOL)hasBorder;
-
 @end
 

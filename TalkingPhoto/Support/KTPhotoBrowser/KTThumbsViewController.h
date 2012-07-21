@@ -61,4 +61,8 @@
  */
 - (void)play4ThumbAtIndex:(NSUInteger)index;
 
+/**
+ *  @brief 是否有录音文件相关联
+ */
+- (BOOL)hasRecordFile:(NSInteger)index;
 @end
