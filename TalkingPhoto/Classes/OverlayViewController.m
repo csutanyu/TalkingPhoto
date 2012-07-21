@@ -84,6 +84,10 @@
   self.recordTab.hidden = YES;
   secondView.hidden = YES;
   
+  self.view.frame = CGRectMake(0, 0, 320, 480);
+  self.firstView.frame = CGRectMake(0, 0, 320, 480);
+  self.secondView.frame = CGRectMake(0, 0, 320, 480);
+  
   [self initAVCam];
 }
 
@@ -118,11 +122,11 @@
   self.navigationController.navigationBarHidden = YES;
   
   self.captureVideoPreviewLayer.frame = CGRectMake(0, 0, 320, 427);
-  [self.view viewWithTag:2].frame = CGRectMake(0, 427, 320, 53);
+  [self.firstView viewWithTag:2].frame = CGRectMake(0, 427, 320, 53);
 
 
-//  stillImageView.frame = CGRectMake(0, 0, 320, 427);
-//  [secondView viewWithTag:2].frame = CGRectMake(0, 427, 320, 53); 
+  stillImageView.frame = CGRectMake(0, 0, 320, 427);
+  [self.secondView viewWithTag:2].frame = CGRectMake(0, 427, 320, 53); 
   
   [SpeakHereController shareInstance].delegate = self;
 }
