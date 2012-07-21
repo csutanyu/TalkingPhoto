@@ -13,7 +13,6 @@
 @interface RootViewController : UIViewController <JSAnimatedImagesViewDelegate, LeveyPopListViewDelegate>
 @property (retain, nonatomic) IBOutlet JSAnimatedImagesView *animatedImagesView;
 - (IBAction)takephoto:(id)sender;
-
 - (IBAction)photoLibrary:(id)sender;
 
 @end
