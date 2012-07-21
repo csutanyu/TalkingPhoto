@@ -347,10 +347,37 @@
 }
 
 - (IBAction)back2Camera:(id)sender {
+  // 去掉录音文件及数据库中的记录
+  if (_recordFile && [_recordFile length] != 0) {
+    [CommonUtility deleteFileWithPath:_recordFile];
+  }
+  if (_urlOfCapturedImage /*&& ...*/) {
+    NSManagedObjectContext *context = [(AppDelegate *)[UIApplication sharedApplication].delegate managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *descript = [NSEntityDescription entityForName:@"Photo2AudioFileEntity" inManagedObjectContext:context];
+    [fetchRequest setEntity:descript];
+    [fetchRequest setResultType:NSManagedObjectResultType];
+    NSURL * assetURL = _urlOfCapturedImage;
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"%K like %@", @"photo_file_name", [assetURL absoluteString]];
+    [fetchRequest setPredicate:pred];
+    NSError *error = nil;
+    NSArray *resultArr = [context executeFetchRequest:fetchRequest error:&error];
+    if (error != nil) {
+      NSLog(@"executeFetchRequest failed with error: %@", error);
+      return;
+    } else {
+      Photo2AudioFileEntity *lEntry = nil;
+      // delete old audio file
+      for (NSInteger i = 0; i < [resultArr count]; ++i) {
+        // 实际上只可能有一个记录
+        lEntry = [resultArr objectAtIndex:i];          
+        [CommonUtility deleteFileWithPath:lEntry.audio_file_name];
+        [context deleteObject:lEntry];
+      } // for
+    } //     if (error != nil) {
+  } //   if (_urlOfCapturedImage /*&& ...*/) {
+  
   [self releaseRecordAboutResources];
-//  [UIView transitionFromView:secondView toView:firstView duration:0.5 options:UIViewAnimationOptionCurveEaseInOut completion:^(BOOL){
-//    //    [self initAVCam];
-//  }];
   [UIView transitionWithView:self.view duration:0.5
                      options:UIViewAnimationOptionCurveLinear
                   animations:^(void){
@@ -387,6 +414,10 @@
                     secondView.hidden = YES;
                   } completion:NULL];
 
+}
+
+- (IBAction)recordOKButton:(id)sender {
+  [self releaseRecordAboutResources];
 }
 
 #pragma mark - OverlayViewController (InternalMethods)

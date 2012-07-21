@@ -292,7 +292,7 @@
 											<object class="IBUIButton" id="332256101">
 												<reference key="NSNextResponder" ref="350731489"/>
 												<int key="NSvFlags">292</int>
-												<string key="NSFrame">{{252, 18}, {28, 28}}</string>
+												<string key="NSFrame">{{215, 18}, {28, 28}}</string>
 												<reference key="NSSuperview" ref="350731489"/>
 												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="94127620"/>
@@ -321,7 +321,7 @@
 												<string key="NSFrame">{{124, 8}, {72, 37}}</string>
 												<reference key="NSSuperview" ref="350731489"/>
 												<reference key="NSWindow"/>
-												<reference key="NSNextKeyView" ref="332256101"/>
+												<reference key="NSNextKeyView" ref="171899087"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="IBUIOpaque">NO</bool>
 												<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -329,6 +329,28 @@
 												<int key="IBUIContentVerticalAlignment">0</int>
 												<int key="IBUIButtonType">1</int>
 												<string key="IBUINormalTitle">record</string>
+												<reference key="IBUIHighlightedTitleColor" ref="293637694"/>
+												<object class="NSColor" key="IBUINormalTitleColor">
+													<int key="NSColorSpace">1</int>
+													<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+												</object>
+												<reference key="IBUINormalTitleShadowColor" ref="333305803"/>
+												<reference key="IBUIFontDescription" ref="1038181034"/>
+												<reference key="IBUIFont" ref="32779297"/>
+											</object>
+											<object class="IBUIButton" id="171899087">
+												<reference key="NSNextResponder" ref="350731489"/>
+												<int key="NSvFlags">292</int>
+												<string key="NSFrame">{{260, 8}, {40, 40}}</string>
+												<reference key="NSSuperview" ref="350731489"/>
+												<reference key="NSWindow"/>
+												<reference key="NSNextKeyView" ref="332256101"/>
+												<string key="NSReuseIdentifierKey">_NS:9</string>
+												<bool key="IBUIOpaque">NO</bool>
+												<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+												<int key="IBUIContentHorizontalAlignment">0</int>
+												<int key="IBUIContentVerticalAlignment">0</int>
+												<int key="IBUIButtonType">1</int>
 												<reference key="IBUIHighlightedTitleColor" ref="293637694"/>
 												<object class="NSColor" key="IBUINormalTitleColor">
 													<int key="NSColorSpace">1</int>
@@ -515,14 +537,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">useOrRetake</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="94127620"/>
-					</object>
-					<int key="connectionID">63</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">stillImageView</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="703763723"/>
@@ -536,6 +550,14 @@
 						<reference key="destination" ref="850378446"/>
 					</object>
 					<int key="connectionID">78</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">useOrRetake</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="94127620"/>
+					</object>
+					<int key="connectionID">63</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -617,6 +639,15 @@
 						<int key="IBEventType">7</int>
 					</object>
 					<int key="connectionID">70</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">recordOKButton:</string>
+						<reference key="source" ref="171899087"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">80</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -739,29 +770,10 @@
 							<reference ref="850378446"/>
 							<reference ref="496254532"/>
 							<reference ref="332256101"/>
+							<reference ref="171899087"/>
 						</array>
 						<reference key="parent" ref="83626842"/>
 						<string key="objectName">record</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">58</int>
-						<reference key="object" ref="94127620"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="198644236"/>
-							<reference ref="246231839"/>
-						</array>
-						<reference key="parent" ref="83626842"/>
-						<string key="objectName">use_or_retake</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">50</int>
-						<reference key="object" ref="198644236"/>
-						<reference key="parent" ref="94127620"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">51</int>
-						<reference key="object" ref="246231839"/>
-						<reference key="parent" ref="94127620"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">45</int>
@@ -778,6 +790,32 @@
 						<reference key="object" ref="332256101"/>
 						<reference key="parent" ref="350731489"/>
 						<string key="objectName">play_or_pause</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">79</int>
+						<reference key="object" ref="171899087"/>
+						<reference key="parent" ref="350731489"/>
+						<string key="objectName">Button - OK</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">58</int>
+						<reference key="object" ref="94127620"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="198644236"/>
+							<reference ref="246231839"/>
+						</array>
+						<reference key="parent" ref="83626842"/>
+						<string key="objectName">use_or_retake</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">51</int>
+						<reference key="object" ref="246231839"/>
+						<reference key="parent" ref="94127620"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">50</int>
+						<reference key="object" ref="198644236"/>
+						<reference key="parent" ref="94127620"/>
 					</object>
 				</array>
 			</object>
@@ -806,13 +844,14 @@
 				<string key="57.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="58.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="79.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">78</int>
+			<int key="maxID">80</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -835,6 +874,7 @@
 						<string key="playRecordFile:">id</string>
 						<string key="reTakeAction:">id</string>
 						<string key="recordButtonTouched:">id</string>
+						<string key="recordOKButton:">id</string>
 						<string key="shutterAction:">id</string>
 						<string key="usePhotoAction:">id</string>
 					</dictionary>
@@ -865,6 +905,10 @@
 						</object>
 						<object class="IBActionInfo" key="recordButtonTouched:">
 							<string key="name">recordButtonTouched:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="recordOKButton:">
+							<string key="name">recordOKButton:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="shutterAction:">

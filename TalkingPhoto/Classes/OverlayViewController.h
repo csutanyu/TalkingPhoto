@@ -66,6 +66,7 @@
 - (IBAction)recordButtonTouched:(id)sender;
 - (IBAction)usePhotoAction:(id)sender;
 - (IBAction)reTakeAction:(id)sender;
+- (IBAction)recordOKButton:(id)sender;
 
 //AVCam
 @property (nonatomic,retain) AVCamCaptureManager *captureManager;
