@@ -378,12 +378,17 @@
   } //   if (_urlOfCapturedImage /*&& ...*/) {
   
   [self releaseRecordAboutResources];
-  [UIView transitionWithView:self.view duration:0.5
+  [self.captureManager.session startRunning];
+
+  [UIView transitionWithView:self.view duration:0.0
                      options:UIViewAnimationOptionCurveLinear
                   animations:^(void){
                     secondView.hidden = YES;
                     firstView.hidden = NO;
-                  } completion:NULL];
+                  } completion:^(BOOL)
+   {
+//     [self.captureManager.session startRunning];
+   }];
 }
 
 - (IBAction)playRecordFile:(id)sender {
@@ -405,14 +410,21 @@
 }
 
 - (IBAction)reTakeAction:(id)sender {
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void){
+    [self.captureManager.session startRunning];
+  });
   [self releaseRecordAboutResources];
 //  [UIView transitionFromView:secondView toView:firstView duration:0.5 options:UIViewAnimationOptionCurveLinear completion:NULL];
-  [UIView transitionWithView:self.view duration:0.5
+//  [self.captureManager.session startRunning];
+  [UIView transitionWithView:self.view duration:.0
                      options:UIViewAnimationOptionCurveLinear
                   animations:^(void){
                     firstView.hidden = NO;
                     secondView.hidden = YES;
-                  } completion:NULL];
+                  } completion:^(BOOL)
+  {
+//    [self.captureManager.session startRunning];
+  }];
 
 }
 
@@ -773,12 +785,16 @@
   self.recordTab.hidden = YES;
   
 //  [UIView transitionFromView:firstView toView:secondView duration:0.5 options:UIViewAnimationOptionCurveLinear completion:NULL];
-  [UIView transitionWithView:self.view duration:0.5
+  [self.captureManager.session stopRunning];
+  [UIView transitionWithView:self.view duration:0.0
                      options:UIViewAnimationOptionCurveLinear
                   animations:^(void){
                     firstView.hidden = YES;
                     secondView.hidden = NO;
-                  } completion:NULL];
+                  } completion:^(BOOL)
+   {
+//     [self.captureManager.session stopRunning];
+   }];
   [[self delegate] didFinishWithImage:capturedImage movement:movementValueWhileTakingPicture threshold:globalMovementThreshold];	
 }
 

@@ -32,17 +32,17 @@
      
      ////
      // added by tanyu for: 添加录音按扭。 2012.05.11
-     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-     [self addSubview:btn];
-     btn.backgroundColor = [UIColor redColor];
+     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self addSubview:btn];
+     [btn setBackgroundImage:[UIImage imageNamed:@"voice_tag.png"] forState:UIControlStateNormal];
+     btn.frame = CGRectMake(0, 0, 10, 10);
      [btn addTarget:self action:@selector(record:) forControlEvents:UIControlEventTouchUpInside];
-     [btn release];
      
-     UIButton *playBtn = [[UIButton alloc] initWithFrame:CGRectMake(80, 80, 20, 20)];
-     [self addSubview:playBtn];
-     playBtn.backgroundColor = [UIColor redColor];
-     [playBtn addTarget:self action:@selector(play:) forControlEvents:UIControlEventTouchUpInside];
-     [playBtn release];
+//     UIButton *playBtn = [[UIButton alloc] initWithFrame:CGRectMake(80, 80, 20, 20)];
+//     [self addSubview:playBtn];
+//     playBtn.backgroundColor = [UIColor redColor];
+//     [playBtn addTarget:self action:@selector(play:) forControlEvents:UIControlEventTouchUpInside];
+//     [playBtn release];
 
      ////
 

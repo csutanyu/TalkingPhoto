@@ -54,6 +54,8 @@
 		6A60F7DE154E76F500AC72C9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A60F7DD154E76F500AC72C9 /* CoreData.framework */; };
 		6A60F824154E804600AC72C9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A60F822154E803900AC72C9 /* AudioToolbox.framework */; };
 		6A60F827154E81EB00AC72C9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A60F825154E81DF00AC72C9 /* QuartzCore.framework */; };
+		6A6813E615BA88A900C5915E /* round_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6813E515BA88A900C5915E /* round_camera.png */; };
+		6A6813E815BA8C4D00C5915E /* voice_tag.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6813E715BA8C4D00C5915E /* voice_tag.png */; };
 		6A7F30FB15594D930098F34D /* AVCamCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7F30EB15594D930098F34D /* AVCamCaptureManager.m */; };
 		6A7F30FC15594D930098F34D /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7F30ED15594D930098F34D /* AVCamPreviewView.m */; };
 		6A7F30FD15594D930098F34D /* OverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7F30EF15594D930098F34D /* OverlayViewController.m */; };
@@ -160,6 +162,8 @@
 		6A60F7DD154E76F500AC72C9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6A60F822154E803900AC72C9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		6A60F825154E81DF00AC72C9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6A6813E515BA88A900C5915E /* round_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = round_camera.png; sourceTree = "<group>"; };
+		6A6813E715BA8C4D00C5915E /* voice_tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voice_tag.png; sourceTree = "<group>"; };
 		6A7F30EA15594D930098F34D /* AVCamCaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamCaptureManager.h; sourceTree = "<group>"; };
 		6A7F30EB15594D930098F34D /* AVCamCaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamCaptureManager.m; sourceTree = "<group>"; };
 		6A7F30EC15594D930098F34D /* AVCamPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamPreviewView.h; sourceTree = "<group>"; };
@@ -482,10 +486,12 @@
 				6A2BC7DE155E8170000C0E80 /* circle_black.png */,
 				6A2BC7DF155E8170000C0E80 /* circle_black@2x 2.png */,
 				6A08CD2715B58960009EE8EC /* pause.png */,
+				6A6813E715BA8C4D00C5915E /* voice_tag.png */,
 				6A08CD2915B58B49009EE8EC /* back.png */,
 				6A08CD2315B5890F009EE8EC /* play.png */,
 				6A2BC7DC155E78E5000C0E80 /* circle_blue.png */,
 				6A2BC7DA155E77A0000C0E80 /* circle_blue@2x.png */,
+				6A6813E515BA88A900C5915E /* round_camera.png */,
 				6A2BC7C7155E1442000C0E80 /* x_mark.png */,
 				6A121AB41556CE2600E30287 /* shutter_land_left_down.png */,
 				6A121AB51556CE2600E30287 /* shutter_land_left_down@2x.png */,
@@ -604,6 +610,8 @@
 				6A08CD2815B58960009EE8EC /* pause.png in Resources */,
 				6A08CD2A15B58B4A009EE8EC /* back.png in Resources */,
 				6A9B187215B673CC008A5C96 /* select_ok.png in Resources */,
+				6A6813E615BA88A900C5915E /* round_camera.png in Resources */,
+				6A6813E815BA8C4D00C5915E /* voice_tag.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

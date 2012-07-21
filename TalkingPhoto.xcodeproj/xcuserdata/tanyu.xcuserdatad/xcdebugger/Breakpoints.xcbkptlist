@@ -125,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "364535186.728699"
+         timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "503"
-         endingLineNumber = "503"
+         startingLineNumber = "546"
+         endingLineNumber = "546"
          landmarkName = "-drawFocusBoxAtPointOfInterest:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -151,99 +151,99 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "364536209.625552"
+         timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1077"
-         endingLineNumber = "1077">
+         startingLineNumber = "1124"
+         endingLineNumber = "1124">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "364536209.625552"
+         timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1072"
-         endingLineNumber = "1072">
+         startingLineNumber = "1119"
+         endingLineNumber = "1119">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "364536209.625552"
+         timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1067"
-         endingLineNumber = "1067">
+         startingLineNumber = "1114"
+         endingLineNumber = "1114">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "364536209.625552"
+         timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1063"
-         endingLineNumber = "1063">
+         startingLineNumber = "1110"
+         endingLineNumber = "1110">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "364536209.625552"
+         timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1058"
-         endingLineNumber = "1058">
+         startingLineNumber = "1105"
+         endingLineNumber = "1105">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "364536209.625552"
+         timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1053"
-         endingLineNumber = "1053">
+         startingLineNumber = "1100"
+         endingLineNumber = "1100">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "364536209.625552"
+         timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1049"
-         endingLineNumber = "1049">
+         startingLineNumber = "1096"
+         endingLineNumber = "1096">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "364536209.625552"
+         timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1042"
-         endingLineNumber = "1042">
+         startingLineNumber = "1089"
+         endingLineNumber = "1089">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "364535186.728699"
+         timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "383"
-         endingLineNumber = "383"
+         startingLineNumber = "419"
+         endingLineNumber = "419"
          landmarkName = "-reTakeAction:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -252,11 +252,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "364536209.625552"
+         timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "646"
-         endingLineNumber = "646"
+         startingLineNumber = "689"
+         endingLineNumber = "689"
          landmarkName = "-saveRecord"
          landmarkType = "5">
       </FileBreakpoint>
