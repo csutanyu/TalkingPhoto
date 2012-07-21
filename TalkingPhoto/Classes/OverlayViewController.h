@@ -51,6 +51,7 @@
 @property (retain, nonatomic) IBOutlet UIView *recordTab;
 @property (retain, nonatomic) IBOutlet UIView *useOrRetake;
 @property (retain, nonatomic) IBOutlet UIView *secondView;
+@property (retain, nonatomic) IBOutlet UIButton *recordButton;
 @property (retain, nonatomic) IBOutlet UIView *firstView;
 @property(nonatomic,assign) id <OverlayViewControllerDelegate> delegate;
 

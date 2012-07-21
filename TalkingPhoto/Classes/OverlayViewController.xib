@@ -530,6 +530,14 @@
 					<int key="connectionID">61</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">recordButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="850378446"/>
+					</object>
+					<int key="connectionID">78</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">shutterAction:</string>
 						<reference key="source" ref="822457353"/>
@@ -804,7 +812,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">74</int>
+			<int key="maxID">78</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -870,6 +878,7 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="firstView">UIView</string>
+						<string key="recordButton">UIButton</string>
 						<string key="recordTab">UIView</string>
 						<string key="secondView">UIView</string>
 						<string key="stillImageView">UIImageView</string>
@@ -882,6 +891,10 @@
 						<object class="IBToOneOutletInfo" key="firstView">
 							<string key="name">firstView</string>
 							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="recordButton">
+							<string key="name">recordButton</string>
+							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="recordTab">
 							<string key="name">recordTab</string>

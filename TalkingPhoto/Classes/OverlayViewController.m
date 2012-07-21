@@ -34,7 +34,7 @@
 
 @interface OverlayViewController(tanyu)
 - (void)savePhoto2Library;
-- (void)saveThePhotoAndRecord;
+- (void)saveRecord;
 - (void)deleteRecordFile;
 - (void)releaseRecordAboutResources;
 @end
@@ -47,6 +47,7 @@
 @synthesize recordTab;
 @synthesize useOrRetake;
 @synthesize secondView;
+@synthesize recordButton;
 @synthesize firstView;
 @synthesize delegate;
 
@@ -100,6 +101,7 @@
   [self setUseOrRetake:nil];
   [self setSecondView:nil];
   [self setFirstView:nil];
+  [self setRecordButton:nil];
   [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -220,11 +222,11 @@
 		
 		if ([[captureManager session] isRunning]){
 			
-			CALayer *focusBox = [self createLayerBoxWithColor:[UIColor colorWithRed:0.f green:0.f blue:1.f alpha:.8f]];
+			CALayer *focusBox = [self createLayerBoxWithColor:[UIColor colorWithRed:1.f green:1.f blue:1.f alpha:.8f]];
 			[viewLayer addSublayer:focusBox];
 			[self setFocusBox:focusBox];
 			
-			CALayer *exposeBox = [self createLayerBoxWithColor:[UIColor colorWithRed:1.f green:0.f blue:0.f alpha:.8f]]; 
+			CALayer *exposeBox = [self createLayerBoxWithColor:[UIColor colorWithRed:1.f green:1.f blue:1.f alpha:.8f]]; 
 			[viewLayer addSublayer:exposeBox];
 			[self setExposeBox:exposeBox];
 			
@@ -279,17 +281,57 @@
   [useOrRetake release];
   [secondView release];
   [firstView release];
+  [recordButton release];
   [super dealloc];
 }
 
 #pragma mark - Action
 - (IBAction)libraryButtonPressed:(id)sender {
+#if 0
   [self.navigationController pushViewController:[(AppDelegate *)[UIApplication sharedApplication].delegate photoPickerviewController] animated:NO];//  [self.navigationController popViewControllerAnimated:NO];
-//  PhotoPickerViewController *ppvc = [[PhotoPickerViewController alloc] init];
-//  UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:ppvc];
-//  [ppvc release];
-//  [self presentModalViewController:nav animated:YES];
-//  [nav release];
+  //  PhotoPickerViewController *ppvc = [[PhotoPickerViewController alloc] init];
+  //  UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:ppvc];
+  //  [ppvc release];
+  //  [self presentModalViewController:nav animated:YES];
+  //  [nav release];
+#else
+  // 动画弹出框
+  __block NSMutableArray *options = [NSMutableArray array];
+  dispatch_sync([PhotoManager shareInstance].dispatch_queue, ^(void)
+                {
+                  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+                  
+                  if ([[PhotoManager shareInstance].album count] != 0)
+                  {
+                    ALAsset * tmp_asset = [[PhotoManager shareInstance].album lastObject];
+                    NSDictionary *tmp_dict = [NSDictionary dictionaryWithObjectsAndKeys:
+                                              [UIImage imageWithCGImage:[tmp_asset thumbnail]], @"img",
+                                              [NSString stringWithFormat:@"Camera Roll (%d)", [[PhotoManager shareInstance].album count]], @"text",
+                                              [NSString stringWithFormat:@"%d", kLibraryTypeAlbum], @"tag",
+                                              nil];
+                    [options addObject:tmp_dict];
+                  }
+                  
+                  if ([[PhotoManager shareInstance].photoStream count] != 0)
+                  {
+                    ALAsset * tmp_asset = [[PhotoManager shareInstance].photoStream lastObject];
+                    NSDictionary *tmp_dict = [NSDictionary dictionaryWithObjectsAndKeys:
+                                              [UIImage imageWithCGImage:[tmp_asset thumbnail]], @"img",
+                                              [NSString stringWithFormat:@"Photo Stream (%d)", [[PhotoManager shareInstance].album count]], @"text",
+                                              [NSString stringWithFormat:@"%d", kLibraryTypePhotoStream], @"tag",
+                                              nil];
+                    
+                    [options addObject:tmp_dict];
+                  }
+                  
+                  [pool drain];
+                });
+  
+  LeveyPopListView *lplv = [[LeveyPopListView alloc] initWithTitle:@"Albums" options:options];
+  lplv.delegate = [(AppDelegate *)([UIApplication sharedApplication].delegate) rootViewController];
+  [lplv showInView:self.navigationController.view animated:YES];
+  [lplv release];
+#endif
 }
 
 - (IBAction)cameraToggle:(id)sender {
@@ -318,15 +360,21 @@
 }
 
 - (IBAction)playRecordFile:(id)sender {
+
+  [SpeakHereController shareInstance].audioRecordFilePath = _recordFile;
+  [[SpeakHereController shareInstance] play];
 }
 
 - (IBAction)recordButtonTouched:(id)sender {
+  [[SpeakHereController shareInstance] recordOrStopRecord];
 }
 
 - (IBAction)usePhotoAction:(id)sender {
+  // 存图片到library
+  [self savePhoto2Library];
   self.useOrRetake.hidden = YES;
   self.recordTab.hidden = NO;
-  [secondView setNeedsDisplay];
+  [secondView setNeedsDisplay];  
 }
 
 - (IBAction)reTakeAction:(id)sender {
@@ -460,14 +508,16 @@
     
     CGPoint focusPointOfInterest = [[[captureManager videoInput] device] focusPointOfInterest];
     CGSize newBoxSize;
-    if (focusPointOfInterest.x == .5f && focusPointOfInterest.y == .5f) {
-      newBoxSize.width = (116.f / frameSize.width) * oldBoxSize.width;
-      newBoxSize.height = (158.f / frameSize.height) * oldBoxSize.height;
-    } else {
-      newBoxSize.width = (80.f / frameSize.width) * oldBoxSize.width;
-      newBoxSize.height = (110.f / frameSize.height) * oldBoxSize.height;
-    }
-    
+//    if (focusPointOfInterest.x == .5f && focusPointOfInterest.y == .5f) {
+//      newBoxSize.width = (116.f / frameSize.width) * oldBoxSize.width;
+//      newBoxSize.height = (158.f / frameSize.height) * oldBoxSize.height;
+//    } else {
+//      newBoxSize.width = (80.f / frameSize.width) * oldBoxSize.width;
+//      newBoxSize.height = (110.f / frameSize.height) * oldBoxSize.height;
+//    }
+    newBoxSize.width = 50.f;
+    newBoxSize.height = 50.f;
+
     CALayer *focusBox = [self focusBox];
     [focusBox setFrame:CGRectMake(0.f, 0.f, newBoxSize.width, newBoxSize.height)];
     [focusBox setPosition:point];
@@ -487,13 +537,15 @@
     
     CGPoint exposurePointOfInterest = [[[captureManager videoInput] device] exposurePointOfInterest];
     CGSize newBoxSize;
-    if (exposurePointOfInterest.x == .5f && exposurePointOfInterest.y == .5f) {
-      newBoxSize.width = (290.f / frameSize.width) * oldBoxSize.width;
-      newBoxSize.height = (395.f / frameSize.height) * oldBoxSize.height;
-    } else {
-      newBoxSize.width = (114.f / frameSize.width) * oldBoxSize.width;
-      newBoxSize.height = (154.f / frameSize.height) * oldBoxSize.height;
-    }
+//    if (exposurePointOfInterest.x == .5f && exposurePointOfInterest.y == .5f) {
+//      newBoxSize.width = (290.f / frameSize.width) * oldBoxSize.width;
+//      newBoxSize.height = (395.f / frameSize.height) * oldBoxSize.height;
+//    } else {
+//      newBoxSize.width = (114.f / frameSize.width) * oldBoxSize.width;
+//      newBoxSize.height = (154.f / frameSize.height) * oldBoxSize.height;
+//    }
+    newBoxSize.width = 50.f;
+    newBoxSize.height = 50.f;
     
     CALayer *exposeBox = [self exposeBox];
     [exposeBox setFrame:CGRectMake(0.f, 0.f, newBoxSize.width, newBoxSize.height)];
@@ -589,9 +641,8 @@
   [library release];
 }
 
-- (void)saveThePhotoAndRecord
+- (void)saveRecord
 {
-  [self savePhoto2Library]; // 保存照片
   if (_recordFile != nil) { // 保存到数据库
     NSManagedObjectContext *context = [(AppDelegate *)[UIApplication sharedApplication].delegate managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -628,7 +679,7 @@
   }
   
   // release the photo and record file
-  [self releaseRecordAboutResources];
+//  [self releaseRecordAboutResources];
 }
 
 - (void)deleteRecordFile
@@ -704,4 +755,30 @@
 {
 	[[self delegate] handleImageSavingError:error];
 }
+
+#pragma mark - SpeakHereControllerDelegate
+- (void)recordStarted:(SpeakHereController *)speaker
+{
+  // TODO
+  [self.recordButton setTitle:@"stop" forState:UIControlStateNormal];
+}
+
+- (void)recordStoped:(SpeakHereController *)speaker
+{
+  _recordFile = speaker.audioRecordFilePath;
+  // 存到数据库
+  [self saveRecord];
+  [self.recordButton setTitle:@"record" forState:UIControlStateNormal];
+}
+
+- (void)playbackQueueStopped:(SpeakHereController *)speaker
+{
+  // TODO
+}
+
+- (void)playbackQueueResumed:(SpeakHereController *)speaker
+{
+  // TODO
+}
+
 @end
