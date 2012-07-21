@@ -28,6 +28,7 @@
 - (id)initWithTitle:(NSString *)aTitle options:(NSArray *)aOptions
 {
     CGRect rect = [[UIScreen mainScreen] applicationFrame];
+
     if (self = [super initWithFrame:rect])
     {
         self.backgroundColor = [UIColor clearColor];
@@ -145,6 +146,7 @@
 #pragma mark - DrawDrawDraw
 - (void)drawRect:(CGRect)rect
 {
+    return;
 #if 0
     CGRect bgRect = CGRectInset(rect, POPLISTVIEW_SCREENINSET, POPLISTVIEW_SCREENINSET);
     CGRect titleRect = CGRectMake(POPLISTVIEW_SCREENINSET + 10, POPLISTVIEW_SCREENINSET + 10 + 5,
