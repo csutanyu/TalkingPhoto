@@ -146,7 +146,6 @@
 #pragma mark - DrawDrawDraw
 - (void)drawRect:(CGRect)rect
 {
-    return;
 #if 0
     CGRect bgRect = CGRectInset(rect, POPLISTVIEW_SCREENINSET, POPLISTVIEW_SCREENINSET);
     CGRect titleRect = CGRectMake(POPLISTVIEW_SCREENINSET + 10, POPLISTVIEW_SCREENINSET + 10 + 5,
