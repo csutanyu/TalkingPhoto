@@ -348,9 +348,10 @@
 				6A7F30F215594D930098F34D /* Photo2AudioFileEntity.m */,
 				6A27BE3F155A9A44006FD185 /* RootViewController.h */,
 				6A27BE44155AA03E006FD185 /* RootViewController.m */,
+				6A27BE41155A9A44006FD185 /* RootViewController.xib */,
+				6A3B97B2155C02ED009970F6 /* ThumbnailViewController.h */,
 				6A3B97B3155C02ED009970F6 /* ThumbnailViewController.m */,
 				6A7F30EE15594D930098F34D /* OverlayViewController.h */,
-				6A27BE41155A9A44006FD185 /* RootViewController.xib */,
 				6A7F30F315594D930098F34D /* PhotoInfoPicker.h */,
 				6A7F30F415594D930098F34D /* PhotoInfoPicker.m */,
 				6A7F30F515594D930098F34D /* PhotoManager.h */,
@@ -359,7 +360,6 @@
 				6A7F30F815594D930098F34D /* PhotoPickerViewController.m */,
 				6A3B97A1155BEA63009970F6 /* PhotoDataSource.h */,
 				6A3B97A2155BEA63009970F6 /* PhotoDataSource.m */,
-				6A3B97B2155C02ED009970F6 /* ThumbnailViewController.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
