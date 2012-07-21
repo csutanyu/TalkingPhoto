@@ -137,7 +137,6 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(leveyPopListViewDidCancel)]) {
         [self.delegate leveyPopListViewDidCancel];
     }
-    
     // dismiss self
     [self fadeOut];
 }
