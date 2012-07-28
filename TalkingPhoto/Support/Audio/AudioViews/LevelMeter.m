@@ -74,7 +74,7 @@ int _cmp_levelThresholds(const void * a, const void * b)
 	_variableLightIntensity = YES;
 	_bgColor = [[UIColor alloc] initWithRed:0. green:0. blue:0. alpha:0.6];
 	_borderColor = [[UIColor alloc] initWithRed:0. green:0. blue:0. alpha:1.];
-	_colorThresholds = (LevelMeterColorThreshold *)malloc(3 * sizeof(LevelMeterColorThreshold));
+	_colorThresholds = malloc(3 * sizeof(LevelMeterColorThreshold));
 	_colorThresholds[0].maxValue = 0.25;
 	_colorThresholds[0].color = [[UIColor alloc] initWithRed:0. green:1. blue:0. alpha:1.];
 	_colorThresholds[1].maxValue = 0.8;
@@ -275,7 +275,7 @@ int _cmp_levelThresholds(const void * a, const void * b)
 {
 	int i;
 	for (i=0; i<_numColorThresholds; i++) [_colorThresholds[i].color release];
-	_colorThresholds = (LevelMeterColorThreshold *)realloc(_colorThresholds, sizeof(LevelMeterColorThreshold) * count);
+	_colorThresholds = realloc(_colorThresholds, sizeof(LevelMeterColorThreshold) * count);
 	
 	for (i=0; i<count; i++)
 	{
