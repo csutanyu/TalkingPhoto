@@ -1,7 +1,7 @@
 /*
- 
-    File: SpeakHereController.h
-Abstract: Class for handling user interaction and file record/playback
+
+    File: MeterTable.h
+Abstract: Class for handling conversion from linear scale to dB
  Version: 2.4
 
 Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
@@ -46,52 +46,34 @@ Copyright (C) 2009 Apple Inc. All Rights Reserved.
 
  
 */
+ 
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
 
-#import <Foundation/Foundation.h>
+class MeterTable
+{
+public:
+// MeterTable constructor arguments: 
+// inNumUISteps - the number of steps in the UI element that will be drawn. 
+//					This could be a height in pixels or number of bars in an LED style display.
+// inTableSize - The size of the table. The table needs to be large enough that there are no large gaps in the response.
+// inMinDecibels - the decibel value of the minimum displayed amplitude.
+// inRoot - this controls the curvature of the response. 2.0 is square root, 3.0 is cube root. But inRoot doesn't have to be integer valued, it could be 1.8 or 2.5, etc.
 
-#import "AQPlayer.h"
-#import "AQRecorder.h"
-#import "AQLevelMeter.h"
-
-@protocol SpeakHereControllerDelegate;
-
-@interface SpeakHereController : NSObject {
-
-	AQPlayer*             player;
-	AQRecorder*           recorder;
-	BOOL                  playbackWasInterrupted;
-	BOOL                  playbackWasPaused;
+MeterTable(float inMinDecibels = -80., size_t inTableSize = 400, float inRoot = 2.0);	
+~MeterTable();
 	
-	NSString*             _audioFilePath;	
-  
-  id<SpeakHereControllerDelegate> _delegate;
-  AQLevelMeter*         lvlMeter_in;
-}
-
-
-
-@property (readonly)			AQPlayer			*player;
-@property (readonly)			AQRecorder			*recorder;
-@property						BOOL				playbackWasInterrupted;
-@property (readwrite, nonatomic, copy) NSString * audioRecordFilePath;
-@property (nonatomic, assign) id<SpeakHereControllerDelegate> delegate;
-@property (nonatomic, assign) AQLevelMeter * lvlMeter_in;
-
-+ (SpeakHereController *)shareInstance;
-
-- (void)recordOrStopRecord;
-
-- (void)prepare2Play:(NSString *)aFile;
-
-- (void)play;
-
-@end
-
-@protocol SpeakHereControllerDelegate <NSObject>
-@required
-- (void)recordStarted:(SpeakHereController *)speaker;
-- (void)recordStoped:(SpeakHereController *)speaker;
-- (void)playbackQueueStopped:(SpeakHereController *)speaker;
-- (void)playbackQueueResumed:(SpeakHereController *)speaker;
-@optional
-@end
+	float ValueAt(float inDecibels)
+	{
+		if (inDecibels < mMinDecibels) return  0.;
+		if (inDecibels >= 0.) return 1.;
+		int index = (int)(inDecibels * mScaleFactor);
+		return mTable[index];
+	}
+private:
+	float	mMinDecibels;
+	float	mDecibelResolution;
+	float	mScaleFactor;
+	float	*mTable;
+};
