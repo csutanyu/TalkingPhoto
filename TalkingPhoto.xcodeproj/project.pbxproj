@@ -97,6 +97,13 @@
 		6ABD779B15565B0D00016892 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ABD779915565AFE00016892 /* CoreMedia.framework */; };
 		6ABD779E15565B9B00016892 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ABD779C15565B9100016892 /* AVFoundation.framework */; };
 		6ABD77A115565BBD00016892 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ABD779F15565BB200016892 /* CoreLocation.framework */; };
+<<<<<<< HEAD
+=======
+		6AD5295715C37C8800D93718 /* AQLevelMeter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5295015C37C8800D93718 /* AQLevelMeter.mm */; };
+		6AD5295815C37C8800D93718 /* GLLevelMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5295215C37C8800D93718 /* GLLevelMeter.m */; };
+		6AD5295915C37C8800D93718 /* LevelMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5295415C37C8800D93718 /* LevelMeter.m */; };
+		6AD5295A15C37C8800D93718 /* LevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5295615C37C8800D93718 /* LevelView.m */; };
+>>>>>>> parent of 5611a70... 录音声音
 		6AD719AE1556B013008AFF6B /* camera_btn_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD719A81556B013008AFF6B /* camera_btn_down.png */; };
 		6AD719AF1556B013008AFF6B /* camera_btn_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD719A91556B013008AFF6B /* camera_btn_down@2x.png */; };
 		6AD719B01556B013008AFF6B /* camera_btn_nor.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD719AA1556B013008AFF6B /* camera_btn_nor.png */; };
@@ -231,6 +238,17 @@
 		6ABD779915565AFE00016892 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		6ABD779C15565B9100016892 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6ABD779F15565BB200016892 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+<<<<<<< HEAD
+=======
+		6AD5294F15C37C8800D93718 /* AQLevelMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQLevelMeter.h; sourceTree = "<group>"; };
+		6AD5295015C37C8800D93718 /* AQLevelMeter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AQLevelMeter.mm; sourceTree = "<group>"; };
+		6AD5295115C37C8800D93718 /* GLLevelMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLLevelMeter.h; sourceTree = "<group>"; };
+		6AD5295215C37C8800D93718 /* GLLevelMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLLevelMeter.m; sourceTree = "<group>"; };
+		6AD5295315C37C8800D93718 /* LevelMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelMeter.h; sourceTree = "<group>"; };
+		6AD5295415C37C8800D93718 /* LevelMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelMeter.m; sourceTree = "<group>"; };
+		6AD5295515C37C8800D93718 /* LevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelView.h; sourceTree = "<group>"; };
+		6AD5295615C37C8800D93718 /* LevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelView.m; sourceTree = "<group>"; };
+>>>>>>> parent of 5611a70... 录音声音
 		6AD719A81556B013008AFF6B /* camera_btn_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_btn_down.png; path = Resources/camera_btn_down.png; sourceTree = "<group>"; };
 		6AD719A91556B013008AFF6B /* camera_btn_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera_btn_down@2x.png"; path = "Resources/camera_btn_down@2x.png"; sourceTree = "<group>"; };
 		6AD719AA1556B013008AFF6B /* camera_btn_nor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_btn_nor.png; path = Resources/camera_btn_nor.png; sourceTree = "<group>"; };
@@ -398,6 +416,10 @@
 		6ABD7746155659A900016892 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+=======
+				6AD5294E15C37C8800D93718 /* AudioViews */,
+>>>>>>> parent of 5611a70... 录音声音
 				6ABD7747155659A900016892 /* AQPlayer.h */,
 				6ABD7748155659A900016892 /* AQPlayer.mm */,
 				6ABD7749155659A900016892 /* AQRecorder.h */,
@@ -464,6 +486,24 @@
 			path = md5;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
+=======
+		6AD5294E15C37C8800D93718 /* AudioViews */ = {
+			isa = PBXGroup;
+			children = (
+				6AD5294F15C37C8800D93718 /* AQLevelMeter.h */,
+				6AD5295015C37C8800D93718 /* AQLevelMeter.mm */,
+				6AD5295115C37C8800D93718 /* GLLevelMeter.h */,
+				6AD5295215C37C8800D93718 /* GLLevelMeter.m */,
+				6AD5295315C37C8800D93718 /* LevelMeter.h */,
+				6AD5295415C37C8800D93718 /* LevelMeter.m */,
+				6AD5295515C37C8800D93718 /* LevelView.h */,
+				6AD5295615C37C8800D93718 /* LevelView.m */,
+			);
+			path = AudioViews;
+			sourceTree = "<group>";
+		};
+>>>>>>> parent of 5611a70... 录音声音
 		6AD7199B1556AFC2008AFF6B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -655,6 +695,13 @@
 				6A3B97B4155C02ED009970F6 /* ThumbnailViewController.m in Sources */,
 				6A2BC7D6155E4773000C0E80 /* LeveyPopListView.m in Sources */,
 				6A2BC7D7155E4773000C0E80 /* LeveyPopListViewCell.m in Sources */,
+<<<<<<< HEAD
+=======
+				6AD5295715C37C8800D93718 /* AQLevelMeter.mm in Sources */,
+				6AD5295815C37C8800D93718 /* GLLevelMeter.m in Sources */,
+				6AD5295915C37C8800D93718 /* LevelMeter.m in Sources */,
+				6AD5295A15C37C8800D93718 /* LevelView.m in Sources */,
+>>>>>>> parent of 5611a70... 录音声音
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
