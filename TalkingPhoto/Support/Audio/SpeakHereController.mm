@@ -60,7 +60,7 @@ static SpeakHereController * g_instance = nil;
 @synthesize playbackWasInterrupted;
 @synthesize audioRecordFilePath = _audioFilePath;
 @synthesize delegate = _delegate;
-
+@synthesize lvlMeter_in;
 char *OSTypeToStr(char *buf, OSType t)
 {
 	char *p = buf;
@@ -96,6 +96,7 @@ char *OSTypeToStr(char *buf, OSType t)
 -(void)stopPlayQueue
 {
 	player->StopQueue();
+  [lvlMeter_in setAq: nil];
 }
 
 -(void)pausePlayQueue
@@ -107,6 +108,8 @@ char *OSTypeToStr(char *buf, OSType t)
 - (void)stopRecord
 {	
 	recorder->StopRecord();
+  // Disconnect our level meter from the audio queue
+	[lvlMeter_in setAq: nil];
 }
 
 - (void)prepare2Play:(NSString *)aFile
@@ -168,7 +171,10 @@ char *OSTypeToStr(char *buf, OSType t)
 		// Start the recorder
     self.audioRecordFilePath =  [[CommonUtility uniqueFileName] stringByAppendingFormat:@".caf"];
 
-		recorder->StartRecord( (CFStringRef)self.audioRecordFilePath);		
+		recorder->StartRecord( (CFStringRef)self.audioRecordFilePath);
+    // Hook the level meter up to the Audio Queue for the recorder
+		[lvlMeter_in setAq: recorder->Queue()];
+    
     if (self.delegate) {
       [self.delegate recordStarted:self];
     }
@@ -245,6 +251,9 @@ void propListener(	void *                  inClientData,
 				if (THIS->player->IsRunning()) {
 					[THIS pausePlayQueue];
 					[[NSNotificationCenter defaultCenter] postNotificationName:@"playbackQueueStopped" object:THIS];
+          if (THIS.delegate) {
+            [THIS.delegate playbackQueueStopped:THIS];
+          }
 				}		
 			}
 
@@ -301,8 +310,8 @@ void propListener(	void *                  inClientData,
       if (error) printf("AudioSessionSetActive (true) failed");
     }
     
-    UIColor *bgColor = [[UIColor alloc] initWithRed:.39 green:.44 blue:.57 alpha:.5];
-    [bgColor release];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackQueueStopped:) name:@"playbackQueueStopped" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackQueueResumed:) name:@"playbackQueueResumed" object:nil];
     
     // disable the play button since we have no recording to play yet
     playbackWasInterrupted = NO;
@@ -319,6 +328,17 @@ void propListener(	void *                  inClientData,
 	delete recorder;
 	
 	[super dealloc];
+}
+
+# pragma mark Notification routines
+- (void)playbackQueueStopped:(NSNotification *)note
+{
+	[lvlMeter_in setAq: nil];
+}
+
+- (void)playbackQueueResumed:(NSNotification *)note
+{
+	[lvlMeter_in setAq: player->Queue()];
 }
 
 @end

@@ -49,6 +49,7 @@
 @synthesize secondView;
 @synthesize recordButton;
 @synthesize firstView;
+@synthesize lvlMeter_in;
 @synthesize delegate;
 
 //AVCam
@@ -89,6 +90,11 @@
   self.firstView.frame = CGRectMake(0, 0, 320, 480);
   self.secondView.frame = CGRectMake(0, 0, 320, 480);
   
+  UIColor *bgColor = [[UIColor alloc] initWithRed:.39 green:.44 blue:.57 alpha:.5];
+	[lvlMeter_in setBackgroundColor:bgColor];
+	[lvlMeter_in setBorderColor:bgColor];
+  self.lvlMeter_in.hidden = YES;
+  
   [self initAVCam];
 }
 
@@ -102,6 +108,7 @@
   [self setSecondView:nil];
   [self setFirstView:nil];
   [self setRecordButton:nil];
+  [self setLvlMeter_in:nil];
   [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -113,6 +120,7 @@
   if (![self.captureManager.session isRunning]) {
     [self.captureManager.session startRunning];
   }
+  [SpeakHereController shareInstance].lvlMeter_in = self.lvlMeter_in;
   
   _statusBarHidden = [UIApplication sharedApplication].statusBarHidden;
   [UIApplication sharedApplication].statusBarHidden = YES;
@@ -137,10 +145,11 @@
 {
   [super viewWillDisappear:animated];
   
-  if (![self.captureManager.session isRunning]) {
-    [self.captureManager.session startRunning];
+  if ([self.captureManager.session isRunning]) {
+    [self.captureManager.session stopRunning];
   }
-
+  [SpeakHereController shareInstance].lvlMeter_in = nil;
+  
   [UIApplication sharedApplication].statusBarHidden = _statusBarHidden;
   self.navigationController.navigationBarHidden = _oldNavgationBarHidden;
   
@@ -282,6 +291,14 @@
   [secondView release];
   [firstView release];
   [recordButton release];
+  
+  [self setCaptureManager:nil];
+	[self setVideoPreviewView:nil];
+	[self setCaptureVideoPreviewLayer:nil];
+	[self setExposeBox:nil];
+	[self setFocusBox:nil];
+
+  [lvlMeter_in release];
   [super dealloc];
 }
 
@@ -808,11 +825,13 @@
 {
   // TODO
   [self.recordButton setTitle:@"stop" forState:UIControlStateNormal];
+  self.lvlMeter_in.hidden = NO;
 }
 
 - (void)recordStoped:(SpeakHereController *)speaker
 {
   _recordFile = speaker.audioRecordFilePath;
+  self.lvlMeter_in.hidden = YES;
   // 存到数据库
   [self saveRecord];
   [self.recordButton setTitle:@"record" forState:UIControlStateNormal];
@@ -821,11 +840,13 @@
 - (void)playbackQueueStopped:(SpeakHereController *)speaker
 {
   // TODO
+  self.lvlMeter_in.hidden = YES;
 }
 
 - (void)playbackQueueResumed:(SpeakHereController *)speaker
 {
   // TODO
+  self.lvlMeter_in.hidden = NO;
 }
 
 @end

@@ -39,11 +39,18 @@
      
 //     [btn addTarget:self action:@selector(record:) forControlEvents:UIControlEventTouchUpInside];
 
-//     UIButton *playBtn = [[UIButton alloc] initWithFrame:CGRectMake(80, 80, 20, 20)];
-//     [self addSubview:playBtn];
-//     playBtn.backgroundColor = [UIColor redColor];
-//     [playBtn addTarget:self action:@selector(play:) forControlEvents:UIControlEventTouchUpInside];
-//     [playBtn release];
+     UIButton *recordBtn = [[UIButton alloc] initWithFrame:CGRectMake(20, 20, 30, 30)];
+     [self addSubview:recordBtn];
+     recordBtn.backgroundColor = [UIColor blueColor];
+     [recordBtn addTarget:self action:@selector(record:) forControlEvents:UIControlEventTouchUpInside];
+     [recordBtn release];
+
+     
+     UIButton *playBtn = [[UIButton alloc] initWithFrame:CGRectMake(70, 70, 30, 30)];
+     [self addSubview:playBtn];
+     playBtn.backgroundColor = [UIColor redColor];
+     [playBtn addTarget:self action:@selector(play:) forControlEvents:UIControlEventTouchUpInside];
+     [playBtn release];
 
      ////
 

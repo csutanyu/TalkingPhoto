@@ -207,9 +207,11 @@
     if ([session canAddInput:videoInput]) {
         [session addInput:videoInput];
     }
-    if ([session canAddInput:audioInput]) {
-        [session addInput:audioInput];
-    }
+  // deleted by tanyu. 2012.07.28.由于添加了音频设备会使录音组件不能使用，而本目前不需要摄像，帮去掉之
+//    if ([session canAddInput:audioInput]) {
+//        [session addInput:audioInput];
+//    }
+  // end
     if ([session canAddOutput:movieFileOutput]) {
         [session addOutput:movieFileOutput];
         [self setMirroringMode:AVCamMirroringAuto];
