@@ -139,5 +139,5 @@
 
   return [[(ALAsset*)[tmp objectAtIndex:index] defaultRepresentation] url];
 }
-//- (void)trashPhoto{}
+
 @end

@@ -96,19 +96,18 @@ const CGFloat ktkDefaultToolbarHeight = 44;
    scrollView_ = [newView retain];
    
    [newView release];
-
-  // deleted by tanyu. 不要上一张，下一张的按钮，以便加上录音，播放及删除的按钮
-//   nextButton_ = [[UIBarButtonItem alloc] 
-//                  initWithImage:KTLoadImageFromBundle(@"nextIcon.png")
-//                  style:UIBarButtonItemStylePlain
-//                  target:self
-//                  action:@selector(nextPhoto)];
-//   
-//   previousButton_ = [[UIBarButtonItem alloc] 
-//                      initWithImage:KTLoadImageFromBundle(@"previousIcon.png")
-//                      style:UIBarButtonItemStylePlain
-//                      target:self
-//                      action:@selector(previousPhoto)];
+   
+   nextButton_ = [[UIBarButtonItem alloc] 
+                  initWithImage:KTLoadImageFromBundle(@"nextIcon.png")
+                  style:UIBarButtonItemStylePlain
+                  target:self
+                  action:@selector(nextPhoto)];
+   
+   previousButton_ = [[UIBarButtonItem alloc] 
+                      initWithImage:KTLoadImageFromBundle(@"previousIcon.png")
+                      style:UIBarButtonItemStylePlain
+                      target:self
+                      action:@selector(previousPhoto)];
    
    UIBarButtonItem *trashButton = nil;
    if ([dataSource_ respondsToSelector:@selector(deleteImageAtIndex:)]) {
@@ -130,13 +129,13 @@ const CGFloat ktkDefaultToolbarHeight = 44;
                                                                     target:nil 
                                                                     action:nil];
    
-   NSMutableArray *toolbarItems = [[NSMutableArray alloc] initWithCapacity:5];
+   NSMutableArray *toolbarItems = [[NSMutableArray alloc] initWithCapacity:7];
    
    if (exportButton) [toolbarItems addObject:exportButton];
    [toolbarItems addObject:space];
-//   [toolbarItems addObject:previousButton_];
+   [toolbarItems addObject:previousButton_];
    [toolbarItems addObject:space];
-//   [toolbarItems addObject:nextButton_];
+   [toolbarItems addObject:nextButton_];
    [toolbarItems addObject:space];
    if (trashButton) [toolbarItems addObject:trashButton];
    
