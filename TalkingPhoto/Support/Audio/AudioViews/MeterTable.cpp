@@ -1,7 +1,7 @@
 /*
- 
-    File: SpeakHereController.h
-Abstract: Class for handling user interaction and file record/playback
+
+    File: MeterTable.cpp
+Abstract: Class for handling conversion from linear scale to dB
  Version: 2.4
 
 Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
@@ -47,51 +47,40 @@ Copyright (C) 2009 Apple Inc. All Rights Reserved.
  
 */
 
-#import <Foundation/Foundation.h>
+#include "MeterTable.h"
 
-#import "AQPlayer.h"
-#import "AQRecorder.h"
-#import "AQLevelMeter.h"
-
-@protocol SpeakHereControllerDelegate;
-
-@interface SpeakHereController : NSObject {
-
-	AQPlayer*             player;
-	AQRecorder*           recorder;
-	BOOL                  playbackWasInterrupted;
-	BOOL                  playbackWasPaused;
-	
-	NSString*             _audioFilePath;	
-  
-  id<SpeakHereControllerDelegate> _delegate;
-  AQLevelMeter*         lvlMeter_in;
+inline double DbToAmp(double inDb)
+{
+	return pow(10., 0.05 * inDb);
 }
 
+MeterTable::MeterTable(float inMinDecibels, size_t inTableSize, float inRoot)
+	: mMinDecibels(inMinDecibels),
+	mDecibelResolution(mMinDecibels / (inTableSize - 1)), 
+	mScaleFactor(1. / mDecibelResolution)
+{
+	if (inMinDecibels >= 0.)
+	{
+		printf("MeterTable inMinDecibels must be negative");
+		return;
+	}
 
+	mTable = (float*)malloc(inTableSize*sizeof(float));
 
-@property (readonly)			AQPlayer			*player;
-@property (readonly)			AQRecorder			*recorder;
-@property						BOOL				playbackWasInterrupted;
-@property (readwrite, nonatomic, copy) NSString * audioRecordFilePath;
-@property (nonatomic, assign) id<SpeakHereControllerDelegate> delegate;
-@property (nonatomic, assign) AQLevelMeter * lvlMeter_in;
+	double minAmp = DbToAmp(inMinDecibels);
+	double ampRange = 1. - minAmp;
+	double invAmpRange = 1. / ampRange;
+	
+	double rroot = 1. / inRoot;
+	for (size_t i = 0; i < inTableSize; ++i) {
+		double decibels = i * mDecibelResolution;
+		double amp = DbToAmp(decibels);
+		double adjAmp = (amp - minAmp) * invAmpRange;
+		mTable[i] = pow(adjAmp, rroot);
+	}
+}
 
-+ (SpeakHereController *)shareInstance;
-
-- (void)recordOrStopRecord;
-
-- (void)prepare2Play:(NSString *)aFile;
-
-- (void)play;
-
-@end
-
-@protocol SpeakHereControllerDelegate <NSObject>
-@required
-- (void)recordStarted:(SpeakHereController *)speaker;
-- (void)recordStoped:(SpeakHereController *)speaker;
-- (void)playbackQueueStopped:(SpeakHereController *)speaker;
-- (void)playbackQueueResumed:(SpeakHereController *)speaker;
-@optional
-@end
+MeterTable::~MeterTable()
+{
+	free(mTable);
+}

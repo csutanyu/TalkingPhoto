@@ -49,6 +49,7 @@
 @synthesize secondView;
 @synthesize recordButton;
 @synthesize firstView;
+@synthesize lvlMeter_in;
 @synthesize delegate;
 
 //AVCam
@@ -83,12 +84,17 @@
   
   self.useOrRetake.hidden = NO;
   self.recordTab.hidden = YES;
-  secondView.hidden = YES;
+  secondView.hidden = NO;
   
   self.view.frame = CGRectMake(0, 0, 320, 480);
   self.firstView.frame = CGRectMake(0, 0, 320, 480);
   self.secondView.frame = CGRectMake(0, 0, 320, 480);
   
+  UIColor *bgColor = [[UIColor alloc] initWithRed:.39 green:.44 blue:.57 alpha:.5];
+	[lvlMeter_in setBackgroundColor:bgColor];
+	[lvlMeter_in setBorderColor:bgColor];
+  lvlMeter_in.hidden = YES;
+
   [self initAVCam];
 }
 
@@ -102,6 +108,7 @@
   [self setSecondView:nil];
   [self setFirstView:nil];
   [self setRecordButton:nil];
+  [self setLvlMeter_in:nil];
   [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -110,9 +117,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
   [super viewWillAppear:animated];
+  
   if (![self.captureManager.session isRunning]) {
     [self.captureManager.session startRunning];
   }
+  
+//  [SpeakHereController shareInstance].lvlMeter_in = lvlMeter_in;
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackQueueStopped:) name:@"playbackQueueStopped" object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackQueueResumed:) name:@"playbackQueueResumed" object:nil];
   
   _statusBarHidden = [UIApplication sharedApplication].statusBarHidden;
   [UIApplication sharedApplication].statusBarHidden = YES;
@@ -129,7 +141,8 @@
 
   stillImageView.frame = CGRectMake(0, 0, 320, 427);
   [self.secondView viewWithTag:2].frame = CGRectMake(0, 427, 320, 53); 
-  
+  firstView.hidden = NO;
+  secondView.hidden = YES;
   [SpeakHereController shareInstance].delegate = self;
 }
 
@@ -141,6 +154,11 @@
     [self.captureManager.session startRunning];
   }
 
+  [SpeakHereController shareInstance].lvlMeter_in = nil;
+  [[NSNotificationCenter defaultCenter] removeObserver:self name:@"playbackQueueStopped" object:nil];
+  [[NSNotificationCenter defaultCenter] removeObserver:self name:@"playbackQueueResumed" object:nil];
+
+  
   [UIApplication sharedApplication].statusBarHidden = _statusBarHidden;
   self.navigationController.navigationBarHidden = _oldNavgationBarHidden;
   
@@ -282,6 +300,7 @@
   [secondView release];
   [firstView release];
   [recordButton release];
+  [lvlMeter_in release];
   [super dealloc];
 }
 
@@ -403,7 +422,7 @@
 
 - (IBAction)usePhotoAction:(id)sender {
   // 存图片到library
-  [self savePhoto2Library];
+  [self savePhoto2Library]; // TODO 调试删除
   self.useOrRetake.hidden = YES;
   self.recordTab.hidden = NO;
   [secondView setNeedsDisplay];  
@@ -807,25 +826,30 @@
 - (void)recordStarted:(SpeakHereController *)speaker
 {
   // TODO
+  lvlMeter_in.hidden = NO;
   [self.recordButton setTitle:@"stop" forState:UIControlStateNormal];
 }
 
 - (void)recordStoped:(SpeakHereController *)speaker
 {
+  lvlMeter_in.hidden = YES;
   _recordFile = speaker.audioRecordFilePath;
   // 存到数据库
   [self saveRecord];
   [self.recordButton setTitle:@"record" forState:UIControlStateNormal];
 }
 
+# pragma mark Notification routines
 - (void)playbackQueueStopped:(SpeakHereController *)speaker
 {
   // TODO
+  lvlMeter_in.hidden = YES;
 }
 
 - (void)playbackQueueResumed:(SpeakHereController *)speaker
 {
   // TODO
+  lvlMeter_in.hidden = NO;
 }
 
 @end
