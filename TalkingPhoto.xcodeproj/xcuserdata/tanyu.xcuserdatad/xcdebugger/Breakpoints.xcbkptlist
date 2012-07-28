@@ -7,6 +7,32 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
+         filePath = "TalkingPhoto/Support/Audio/SpeakHereController.mm"
+         timestampString = "364141519.771028"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "169"
+         endingLineNumber = "169"
+         landmarkName = "-recordOrStopRecord"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TalkingPhoto/Support/Audio/SpeakHereController.mm"
+         timestampString = "364141519.771028"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "161"
+         endingLineNumber = "161"
+         landmarkName = "-recordOrStopRecord"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/AVCamCaptureManager.m"
          timestampString = "364316736.279809"
          startingColumnNumber = "9223372036854775807"
@@ -14,6 +40,19 @@
          startingLineNumber = "351"
          endingLineNumber = "351"
          landmarkName = "-cameraToggle"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TalkingPhoto/Classes/AVCamCaptureManager.m"
+         timestampString = "364316736.279809"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "280"
+         endingLineNumber = "280"
+         landmarkName = "-captureStillImage"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -34,6 +73,19 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/AVCamCaptureManager.m"
+         timestampString = "364316736.279809"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "272"
+         endingLineNumber = "272"
+         landmarkName = "-captureStillImage"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TalkingPhoto/Classes/AVCamCaptureManager.m"
          timestampString = "364316727.949538"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
@@ -47,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "365137737.783452"
+         timestampString = "364534194.212481"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "290"
-         endingLineNumber = "290"
+         startingLineNumber = "272"
+         endingLineNumber = "272"
          landmarkName = "-computeMovementWithX:andY:andZ:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,62 +112,33 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "365137737.783452"
+         timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1148"
-         endingLineNumber = "1148">
+         startingLineNumber = "546"
+         endingLineNumber = "546"
+         landmarkName = "-drawFocusBoxAtPointOfInterest:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "365137737.783452"
+         timestampString = "364534194.212481"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1143"
-         endingLineNumber = "1143">
+         startingLineNumber = "198"
+         endingLineNumber = "198"
+         landmarkName = "-initAVCam"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "365137737.783452"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1138"
-         endingLineNumber = "1138">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "365137737.783452"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1134"
-         endingLineNumber = "1134">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "365137737.783452"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1129"
-         endingLineNumber = "1129">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "365137737.783452"
+         timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "1124"
@@ -126,33 +149,88 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "365137737.783452"
+         timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1120"
-         endingLineNumber = "1120">
+         startingLineNumber = "1119"
+         endingLineNumber = "1119">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "365137737.783452"
+         timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1113"
-         endingLineNumber = "1113">
+         startingLineNumber = "1114"
+         endingLineNumber = "1114">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "365137737.783452"
+         timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "438"
-         endingLineNumber = "438"
+         startingLineNumber = "1110"
+         endingLineNumber = "1110">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TalkingPhoto/Classes/OverlayViewController.m"
+         timestampString = "364543444.732131"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "1105"
+         endingLineNumber = "1105">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TalkingPhoto/Classes/OverlayViewController.m"
+         timestampString = "364543444.732131"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "1100"
+         endingLineNumber = "1100">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TalkingPhoto/Classes/OverlayViewController.m"
+         timestampString = "364543444.732131"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "1096"
+         endingLineNumber = "1096">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TalkingPhoto/Classes/OverlayViewController.m"
+         timestampString = "364543444.732131"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "1089"
+         endingLineNumber = "1089">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TalkingPhoto/Classes/OverlayViewController.m"
+         timestampString = "364543444.732131"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "419"
+         endingLineNumber = "419"
          landmarkName = "-reTakeAction:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -161,11 +239,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "365137737.783452"
+         timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "708"
-         endingLineNumber = "708"
+         startingLineNumber = "689"
+         endingLineNumber = "689"
          landmarkName = "-saveRecord"
          landmarkType = "5">
       </FileBreakpoint>

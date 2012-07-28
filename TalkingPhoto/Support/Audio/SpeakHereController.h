@@ -51,7 +51,6 @@ Copyright (C) 2009 Apple Inc. All Rights Reserved.
 
 #import "AQPlayer.h"
 #import "AQRecorder.h"
-#import "AQLevelMeter.h"
 
 @protocol SpeakHereControllerDelegate;
 
@@ -65,7 +64,6 @@ Copyright (C) 2009 Apple Inc. All Rights Reserved.
 	NSString*             _audioFilePath;	
   
   id<SpeakHereControllerDelegate> _delegate;
-  AQLevelMeter*         lvlMeter_in;
 }
 
 
@@ -75,7 +73,6 @@ Copyright (C) 2009 Apple Inc. All Rights Reserved.
 @property						BOOL				playbackWasInterrupted;
 @property (readwrite, nonatomic, copy) NSString * audioRecordFilePath;
 @property (nonatomic, assign) id<SpeakHereControllerDelegate> delegate;
-@property (nonatomic, assign) AQLevelMeter * lvlMeter_in;
 
 + (SpeakHereController *)shareInstance;
 

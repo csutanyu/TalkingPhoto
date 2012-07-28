@@ -10,7 +10,6 @@
 #import "AVCamPreviewView.h"
 #import "AVCamCaptureManager.h"
 #import "SpeakHereController.h"
-#import "AQLevelMeter.h"
 
 
 @class AVCaptureVideoPreviewLayer;
@@ -54,7 +53,6 @@
 @property (retain, nonatomic) IBOutlet UIView *secondView;
 @property (retain, nonatomic) IBOutlet UIButton *recordButton;
 @property (retain, nonatomic) IBOutlet UIView *firstView;
-@property (retain, nonatomic) IBOutlet AQLevelMeter *lvlMeter_in;
 @property(nonatomic,assign) id <OverlayViewControllerDelegate> delegate;
 
 #pragma mark - Action
