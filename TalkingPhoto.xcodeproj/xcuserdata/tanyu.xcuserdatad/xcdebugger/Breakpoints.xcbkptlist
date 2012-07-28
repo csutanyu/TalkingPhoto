@@ -74,8 +74,6 @@
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/AVCamCaptureManager.m"
          timestampString = "364316736.279809"
-<<<<<<< HEAD
-=======
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "272"
@@ -87,21 +85,6 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "TalkingPhoto/Classes/AVCamCaptureManager.m"
-         timestampString = "364316727.949538"
->>>>>>> parent of 5611a70... 录音声音
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "272"
-         endingLineNumber = "272"
-         landmarkName = "-captureStillImage"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-<<<<<<< HEAD
          filePath = "TalkingPhoto/Classes/AVCamCaptureManager.m"
          timestampString = "364316727.949538"
          startingColumnNumber = "9223372036854775807"
@@ -109,7 +92,12 @@
          startingLineNumber = "264"
          endingLineNumber = "264"
          landmarkName = "-captureStillImage"
-=======
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
          timestampString = "364534194.212481"
          startingColumnNumber = "9223372036854775807"
@@ -117,7 +105,6 @@
          startingLineNumber = "272"
          endingLineNumber = "272"
          landmarkName = "-computeMovementWithX:andY:andZ:"
->>>>>>> parent of 5611a70... 录音声音
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -125,21 +112,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-<<<<<<< HEAD
-         timestampString = "364534194.212481"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "272"
-         endingLineNumber = "272"
-         landmarkName = "-computeMovementWithX:andY:andZ:"
-=======
          timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "546"
          endingLineNumber = "546"
          landmarkName = "-drawFocusBoxAtPointOfInterest:"
->>>>>>> parent of 5611a70... 录音声音
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -147,29 +125,6 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-<<<<<<< HEAD
-         timestampString = "364543444.732131"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "546"
-         endingLineNumber = "546"
-         landmarkName = "-drawFocusBoxAtPointOfInterest:"
-=======
-         timestampString = "364534194.212481"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "198"
-         endingLineNumber = "198"
-         landmarkName = "-initAVCam"
->>>>>>> parent of 5611a70... 录音声音
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-<<<<<<< HEAD
          timestampString = "364534194.212481"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
@@ -177,13 +132,17 @@
          endingLineNumber = "198"
          landmarkName = "-initAVCam"
          landmarkType = "5">
-=======
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TalkingPhoto/Classes/OverlayViewController.m"
          timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "1124"
          endingLineNumber = "1124">
->>>>>>> parent of 5611a70... 录音声音
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
@@ -193,13 +152,8 @@
          timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-<<<<<<< HEAD
-         startingLineNumber = "1124"
-         endingLineNumber = "1124">
-=======
          startingLineNumber = "1119"
          endingLineNumber = "1119">
->>>>>>> parent of 5611a70... 录音声音
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
@@ -209,13 +163,8 @@
          timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-<<<<<<< HEAD
-         startingLineNumber = "1119"
-         endingLineNumber = "1119">
-=======
          startingLineNumber = "1114"
          endingLineNumber = "1114">
->>>>>>> parent of 5611a70... 录音声音
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
@@ -225,10 +174,6 @@
          timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-<<<<<<< HEAD
-         startingLineNumber = "1114"
-         endingLineNumber = "1114">
-=======
          startingLineNumber = "1110"
          endingLineNumber = "1110">
       </FileBreakpoint>
@@ -253,7 +198,6 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "1100"
          endingLineNumber = "1100">
->>>>>>> parent of 5611a70... 录音声音
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
@@ -263,65 +207,8 @@
          timestampString = "364543444.732131"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-<<<<<<< HEAD
-         startingLineNumber = "1110"
-         endingLineNumber = "1110">
-=======
          startingLineNumber = "1096"
          endingLineNumber = "1096">
->>>>>>> parent of 5611a70... 录音声音
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "364543444.732131"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-<<<<<<< HEAD
-         startingLineNumber = "1105"
-         endingLineNumber = "1105">
-=======
-         startingLineNumber = "1089"
-         endingLineNumber = "1089">
->>>>>>> parent of 5611a70... 录音声音
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "364543444.732131"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-<<<<<<< HEAD
-         startingLineNumber = "1100"
-         endingLineNumber = "1100">
-=======
-         startingLineNumber = "419"
-         endingLineNumber = "419"
-         landmarkName = "-reTakeAction:"
-         landmarkType = "5">
->>>>>>> parent of 5611a70... 录音声音
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "TalkingPhoto/Classes/OverlayViewController.m"
-         timestampString = "364543444.732131"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-<<<<<<< HEAD
-         startingLineNumber = "1096"
-         endingLineNumber = "1096">
-=======
-         startingLineNumber = "689"
-         endingLineNumber = "689"
-         landmarkName = "-saveRecord"
-         landmarkType = "5">
->>>>>>> parent of 5611a70... 录音声音
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
